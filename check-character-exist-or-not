@@ -1,0 +1,18 @@
+function test(){
+    
+    $str = "abcdef";
+    $str1 = "a";
+    
+    if(strpos($str,$str1) !== false)
+    {
+        return "true";
+    }
+    else
+    {
+        return "false";
+    }
+   
+    
+}
+
+echo test();
