@@ -1,0 +1,50 @@
+<?php
+
+class test {
+
+
+function sumArray($array){
+	
+    $sum  = 0;
+    
+    $billId = NULL;
+
+    
+	foreach($array as $key => $value){ 
+		 $sum = $sum + $value['amt'];
+         $array[$key]['bill_id'] = &$billId;
+	}
+    
+    $billId = $this->billId($sum);
+
+	return [ 
+		"sum" => $sum,
+	 	"sortArray" => $array
+	];
+}
+
+public function billId($sum){
+    return 2765;
+}
+
+}
+
+$totalArray = array(
+    array(
+        'item' => 'book',
+        'amt' => 560
+    ),
+    array(
+        'item' => 'pen',
+        'amt' => 500
+    )
+);
+
+
+$test = new test();
+$sum = $test->sumArray($totalArray);
+echo "<pre>";
+print_r($sum);
+echo "</pre>";
+
+?>
